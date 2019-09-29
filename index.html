@@ -1,45 +1,43 @@
 <html>
 <script src="./chart.js/dist/Chart.min.js"></script>
+<script src="./data.js"></script>
 <h1>U.S. 2020 Presidential Candidate Sentiment</h1>
 <h2>According to Twitter</h2>
-<canvas id="myChart" width="400" height="400"></canvas>
+<div id="chart">
+    <canvas id="myChart"  style="display: block;"></canvas>
+</div>
 <script>
-// These will get replaced with data via a python script. Think of this file more as a template.
-var biden_data = [];
-var bernie_data = [];
-var trump_data = [];
-var warren_data = [];
-
+var canvas = document.getElementById('myChart');
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['0', '1', '2', '3', '4', '5'],
+        labels: xlabels,
         datasets: [
             {
-            label: 'Candidate 1',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Joe Biden',
+            data: biden_data,
             backgroundColor: 'rgba(255, 99, 132, 0.0)',
             borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
             },
             {
-            label: 'Candidate 2',
-            data: [9, 5, 7, 4, 6, 7],
+            label: 'Bernie Sanders',
+            data: bernie_data,
             backgroundColor: 'rgba(54, 162, 235, 0.0)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1
             },
             {
-            label: 'Candidate 3',
-            data: [3, 4, 2, 1, 2, 3],
+            label: 'Donald Trump',
+            data: trump_data,
             backgroundColor: 'rgba(255, 206, 86, 0.0)',
             borderColor: 'rgba(255, 206, 86, 1)',
             borderWidth: 1
             },
             {
-            label: 'Candidate 4',
-            data: [1, 5, 12, 13, 10, 11],
+            label: 'Elizabeth Warren',
+            data: warren_data, 
             backgroundColor: 'rgba(75, 192, 192, 0.0)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
