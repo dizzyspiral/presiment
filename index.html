@@ -16,28 +16,28 @@ var myChart = new Chart(ctx, {
         datasets: [
             {
             label: 'Joe Biden',
-            data: biden_data,
+            data: joe_biden_data,
             backgroundColor: 'rgba(255, 99, 132, 0.0)',
             borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
             },
             {
             label: 'Bernie Sanders',
-            data: bernie_data,
+            data: bernie_sanders_data,
             backgroundColor: 'rgba(54, 162, 235, 0.0)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1
             },
             {
             label: 'Donald Trump',
-            data: trump_data,
+            data: donald_trump_data,
             backgroundColor: 'rgba(255, 206, 86, 0.0)',
             borderColor: 'rgba(255, 206, 86, 1)',
             borderWidth: 1
             },
             {
             label: 'Elizabeth Warren',
-            data: warren_data, 
+            data: elizabeth_warren_data, 
             backgroundColor: 'rgba(75, 192, 192, 0.0)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -48,19 +48,12 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false
                 },
                 display: true,
                 scaleLabel: {
                     display: true,
                     labelString: 'percent positive tweets'
-                }
-            }],
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'hour'
                 }
             }]
         }
